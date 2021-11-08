@@ -166,6 +166,7 @@
 		9927806B70BDD2CAC5D7DB75 /* CtrlrPanel.cpp */ = {isa = PBXBuildFile; fileRef = C9BAF70535468EA9D84EBAFE; };
 		99319AFC8B66AFB59B23075F /* CtrlrMIDIBuffer.cpp */ = {isa = PBXBuildFile; fileRef = 4EC17DDFCCFF11A37167F5AB; };
 		9B83A002C5798CB49D955516 /* CtrlrPanelMIDIInputThread.cpp */ = {isa = PBXBuildFile; fileRef = F32459B4D439A18C9B334D56; };
+		9FE286B20806467D22D9C426 /* Icon.icns */ = {isa = PBXBuildFile; fileRef = 60FD8A7C67139674C839AEEA; };
 		A0868A1E675267073B5E01AE /* CtrlrPanelComponentProperties.cpp */ = {isa = PBXBuildFile; fileRef = C73F1BB9399AC32F400FD9F2; };
 		A0EAC3516DA325525E3E3A47 /* LAudio.cpp */ = {isa = PBXBuildFile; fileRef = 87C21CCF0E1B1F3443D5480F; };
 		A155627EDC7DDF933203812A /* CtrlrMIDIMon.cpp */ = {isa = PBXBuildFile; fileRef = DA377F50214E401E7C0E94CD; };
@@ -525,6 +526,7 @@
 		60CD4660ECBE00ABFA854066 /* LComponentPeer.h */ /* LComponentPeer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LComponentPeer.h; path = ../../Source/Lua/JuceClasses/LComponentPeer.h; sourceTree = SOURCE_ROOT; };
 		60CF420C1BEBF8D60FD3D82A /* LAudioThumbnail.h */ /* LAudioThumbnail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LAudioThumbnail.h; path = ../../Source/Lua/JuceClasses/LAudioThumbnail.h; sourceTree = SOURCE_ROOT; };
 		60F76B8EFC9E783FCAE78AAE /* build_information.hpp */ /* build_information.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = build_information.hpp; path = ../../Source/Misc/luabind/build_information.hpp; sourceTree = SOURCE_ROOT; };
+		60FD8A7C67139674C839AEEA /* Icon.icns */ /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = file.icns; name = Icon.icns; path = Icon.icns; sourceTree = SOURCE_ROOT; };
 		6252E9E0F0C328E3DD2340A9 /* CtrlrLuaManager.cpp */ /* CtrlrLuaManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CtrlrLuaManager.cpp; path = ../../Source/Lua/CtrlrLuaManager.cpp; sourceTree = SOURCE_ROOT; };
 		627A27DFE28A53CEFC256427 /* CtrlrChildWindow.h */ /* CtrlrChildWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CtrlrChildWindow.h; path = ../../Source/UIComponents/CtrlrWindowManagers/CtrlrChildWindow.h; sourceTree = SOURCE_ROOT; };
 		62A1D89EC5176289BA533219 /* LFileListComponent.h */ /* LFileListComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LFileListComponent.h; path = ../../Source/Lua/JuceClasses/LFileListComponent.h; sourceTree = SOURCE_ROOT; };
@@ -1491,6 +1493,7 @@
 				134AA0F6DA06C006BC3646EA,
 				0F2A10151614696A44E74DF4,
 				9503089C289097F8B3937ABF,
+				60FD8A7C67139674C839AEEA,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2458,6 +2461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C304F9AC74497AEB5234479,
+				9FE286B20806467D22D9C426,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2466,6 +2470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C304F9AC74497AEB5234479,
+				9FE286B20806467D22D9C426,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2474,6 +2479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C304F9AC74497AEB5234479,
+				9FE286B20806467D22D9C426,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2482,6 +2488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C304F9AC74497AEB5234479,
+				9FE286B20806467D22D9C426,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2490,6 +2497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C304F9AC74497AEB5234479,
+				9FE286B20806467D22D9C426,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
