@@ -14188,7 +14188,7 @@ return 2;
 }
 else {
 MatchState ms;
-int anchor = (*p == '^') ? (p++, 1) : 0;
+int anchor = (*p == '^') ? ((void) p++, 1) : 0;
 const char *s1=s+init;
 ms.L = L;
 ms.src_init = s;
@@ -14324,7 +14324,7 @@ const char *src = luaL_checklstring(L, 1, &srcl);
 const char *p = luaL_checkstring(L, 2);
 int  tr = lua_type(L, 3);
 int max_s = luaL_optint(L, 4, srcl+1);
-int anchor = (*p == '^') ? (p++, 1) : 0;
+int anchor = (*p == '^') ? ((void) p++, 1) : 0;
 int n = 0;
 MatchState ms;
 luaL_Buffer b;

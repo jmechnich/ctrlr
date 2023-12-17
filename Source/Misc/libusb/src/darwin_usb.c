@@ -23,6 +23,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <pthread.h>
+#include <stdatomic.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -51,7 +52,7 @@ static clock_serv_t clock_realtime;
 static clock_serv_t clock_monotonic;
 
 static CFRunLoopRef libusb_darwin_acfl = NULL; /* event cf loop */
-static volatile int32_t initCount = 0;
+static volatile atomic_int initCount = 0;
 
 static usbi_mutex_t darwin_cached_devices_lock = PTHREAD_MUTEX_INITIALIZER;
 static struct list_head darwin_cached_devices = {&darwin_cached_devices, &darwin_cached_devices};
@@ -342,7 +343,7 @@ static void *darwin_event_thread_main (void *arg0) {
      This is required because, unlike NSThreads, pthreads are
      not automatically registered. Although we don't use
      Objective-C, we use CoreFoundation, which does. */
-  objc_registerThreadWithCollector();
+  //objc_registerThreadWithCollector();
 #endif
 
   /* hotplug (device arrival/removal) sources */
@@ -439,7 +440,7 @@ static int darwin_init(struct libusb_context *ctx) {
     return rc;
   }
 
-  if (OSAtomicIncrement32Barrier(&initCount) == 1) {
+  if (atomic_fetch_add(&initCount, 1) == 1) {
     /* create the clocks that will be used */
 
     host_self = mach_host_self();
@@ -459,7 +460,7 @@ static int darwin_init(struct libusb_context *ctx) {
 }
 
 static void darwin_exit (void) {
-  if (OSAtomicDecrement32Barrier(&initCount) == 0) {
+  if (atomic_fetch_sub(&initCount, 1) == 0) {
     mach_port_deallocate(mach_task_self(), clock_realtime);
     mach_port_deallocate(mach_task_self(), clock_monotonic);
 
@@ -1279,7 +1280,7 @@ static int darwin_release_interface(struct libusb_device_handle *dev_handle, int
   if (kresult != kIOReturnSuccess)
     usbi_warn (HANDLE_CTX (dev_handle), "Release: %s", darwin_error_str(kresult));
 
-  cInterface->interface = IO_OBJECT_NULL;
+  cInterface->interface = 0;
 
   return darwin_to_libusb (kresult);
 }
